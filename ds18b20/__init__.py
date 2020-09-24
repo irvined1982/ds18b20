@@ -79,7 +79,7 @@ class DS18B20(object):
         """Returns the sensors slave path"""
         sensors = self.get_available_sensors()
         if self._id and self._id not in sensors:
-            raise DS18B20.NoSensorFoundError(sensor_id)
+            raise DS18B20.NoSensorFoundError(self._id)
 
         if not self._id and sensors:
             self._id = sensors[0]
